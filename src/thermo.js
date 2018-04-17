@@ -3,12 +3,16 @@ function Thermostat(){
   const MIN_TEMP = 10;
   const DEFAULT_TEMP = 20;
   const SAVER_MAX_TEMP = 25;
+  const LOW = 18;
+  const MEDIUM = 25;
 
   this.temperature = DEFAULT_TEMP;
   this.change = CHANGE;
   this.min = MIN_TEMP;
   this.max = SAVER_MAX_TEMP;
   this.saver = true;
+  this.low = LOW;
+  this.medium = MEDIUM;
 }
 
 Thermostat.prototype.up = function(){
@@ -36,10 +40,10 @@ Thermostat.prototype.reset = function(){
 };
 
 Thermostat.prototype.energyUsage = function(){
-  if(this.temperature < 18){
+  if(this.temperature < this.low){
     return "low-usage";
   }
-  else if(this.temperature < 25){
+  else if(this.temperature < this.medium){
     return "medium-usage";
   }
   else{
