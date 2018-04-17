@@ -1,7 +1,3 @@
-
-'esconversion'
-
-
 function Thermostat(){
   const CHANGE = 5;
   const MIN_TEMP = 10;

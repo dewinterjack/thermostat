@@ -54,4 +54,20 @@ describe("Thermostat", function() {
     });
   });
 
+  describe("#energyUsage", function(){
+    it("returns: low-usage | when usage is low", function(){
+      thermostat.down();
+      expect(thermostat.energyUsage()).toBe("low-usage");
+    });
+    it("returns: medium-usage | when usage is medium", function(){
+      thermostat.up();
+      expect(thermostat.energyUsage()).toBe("medium-usage");
+    });
+    it("returns: high-usage | when usage is high", function(){
+      thermostat.up();
+      thermostat.up();
+      expect(thermostat.energyUsage()).toBe("high-usage");
+    });
+  });
+
 });
