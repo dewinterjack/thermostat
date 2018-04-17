@@ -60,10 +60,10 @@ describe("Thermostat", function() {
       expect(thermostat.energyUsage()).toBe("low-usage");
     });
     it("returns: medium-usage | when usage is medium", function(){
-      thermostat.up();
       expect(thermostat.energyUsage()).toBe("medium-usage");
     });
     it("returns: high-usage | when usage is high", function(){
+      thermostat.togglePowerSaver();
       thermostat.up();
       thermostat.up();
       expect(thermostat.energyUsage()).toBe("high-usage");

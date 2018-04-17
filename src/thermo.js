@@ -2,7 +2,7 @@ function Thermostat(){
   const CHANGE = 5;
   const MIN_TEMP = 10;
   const DEFAULT_TEMP = 20;
-  const SAVER_MAX_TEMP = 25
+  const SAVER_MAX_TEMP = 25;
 
   this.temperature = DEFAULT_TEMP;
   this.change = CHANGE;
@@ -33,4 +33,16 @@ Thermostat.prototype.togglePowerSaver = function(){
 
 Thermostat.prototype.reset = function(){
   this.temperature = 20;
+};
+
+Thermostat.prototype.energyUsage = function(){
+  if(this.temperature < 18){
+    return "low-usage";
+  }
+  else if(this.temperature < 25){
+    return "medium-usage";
+  }
+  else{
+    return "high-usage";
+  }
 };
