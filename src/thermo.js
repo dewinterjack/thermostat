@@ -9,7 +9,8 @@ function Thermostat(){
   this.temperature = DEFAULT_TEMP;
   this.change = CHANGE;
   this.min = MIN_TEMP;
-  this.max = SAVER_MAX_TEMP;
+  this.saverMax = SAVER_MAX_TEMP;
+  this.max = this.saverMax;
   this.saver = true;
   this.low = LOW;
   this.medium = MEDIUM;
@@ -32,7 +33,12 @@ Thermostat.prototype.down = function(){
 Thermostat.prototype.togglePowerSaver = function(){
   const MAX_TEMP = 32;
   this.saver = !this.saver;
-  this.max = MAX_TEMP;
+  if(this.saver === false){
+    this.max = MAX_TEMP;
+  }
+  else{
+    this.max = this.saverMax;
+  }
 };
 
 Thermostat.prototype.reset = function(){
