@@ -3,14 +3,20 @@
    <head>
      <title>Thermostat</title>
      <script src="thermo.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet'>
+     <link rel="stylesheet" href="style.css"></link>
+     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
    </head>
    <body>
-     <h1>Thermostat</h1>
-     <p id='currentTemp'>-- C</p>
-     <button>+</button>
-     <button>-</button>
-     <button>Reset</button><br><br>
-     <button>Power Saver</button><span id="powerSaver">ON</span>
-     <p id='usage'>Energy usage: </p>
+     <section class="main">
+        <h1>Thermostat</h1>
+        <hr>
+        <p id='currentTemp'>-- C</p>
+        <button class="btn change">+</button>
+        <button class="btn change">-</button><br><br>
+        <button class="btn">Reset</button><br><br>
+        <button class="btn">Power Saver</button><p id="powerSaver">ON</p>
+        <p id='usage'>Energy usage:</p>
+     </section>
    </body>
 </html>
